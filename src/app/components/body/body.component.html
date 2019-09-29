@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Body</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <hr>
+            <div *ngIf="mostrar" class="card text-white bg-success mb-3" style="max-width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ frase.autor.toUpperCase() }}</h5>
+                    <p class="card-text">{{ frase.mensaje }}</p>
+                </div>
+            </div>
+            <button (click)="mostrar = !mostrar" class="btn btn-outline-success btn-block" id="btn1">Mostrar/Ocultar</button>
+        </div>
+        <div class="col">
+            <hr>
+            <ul class="list-group">
+                <li *ngFor="let personaje of personajes; let i = index;" class="list-group-item">
+                    {{i+1}}- {{ personaje }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
